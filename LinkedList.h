@@ -650,44 +650,4 @@ bool operator!= (const LinkedList<T> &list1, const LinkedList<T> &list2)
 
 // ==================================================================
 
-
-
-template<typename T>
-class TestLinkedList : public LinkedList<T>
-{
-public:
-	TestLinkedList() : LinkedList<T>()
-	{
-
-	}
-
-	~TestLinkedList()
-	{
-
-	}
-
-	bool DefaultConstructorTest()
-	{
-		bool test[2]{ true, true };
-
-		test[0] = (LinkedList<T>::head == nullptr) ? true : false;
-		test[1] = (LinkedList<T>::quantityElem == 0) ? true : false;
-
-		return (test[0] && test[1]);
-	}
-
-	bool NodeDefaultConstructorTest()
-	{
-		bool test[2]{ true, true };
-
-		LinkedList<T>::template LinkedList::Node node<T>();
-
-		test[0] = (node.data == T()) ? true : false;
-		test[1] = (node.ptrNextNode == nullptr) ? true : false;
-
-		return (test[0] && test[1]);
-	}
-
-};
-
 #endif
